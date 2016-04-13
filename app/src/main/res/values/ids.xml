@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_id">593581665390</string>
+    <string name="admob_id">pub-9775612116073570</string>
+    <string name="adID">ca-app-pub-9775612116073570/9887118846</string>
+    <string name="Pierwsze_Osiagniecie">CgkIkPHCnOgZEAIQAQ</string>
+
+
+    <string name="five_minutes">CgkI7tjloaMREAIQAw</string>
+    <string name="three_minutes">CgkI7tjloaMREAIQAg</string>
+    <string name="one_minute">CgkI7tjloaMREAIQAQ</string>
+
+    <string name="arcade1">CgkI7tjloaMREAIQBA</string>
+    <string name="arcade2">CgkI7tjloaMREAIQBQ</string>
+    <string name="arcade3">CgkI7tjloaMREAIQBg</string>
+    <string name="arcade4">CgkI7tjloaMREAIQBw</string>
+    <string name="arcade5">CgkI7tjloaMREAIQCA</string>
+
+    <string name="time_attack1">CgkI7tjloaMREAIQCQ</string>
+    <string name="time_attack2">CgkI7tjloaMREAIQCg</string>
+    <string name="time_attack3">CgkI7tjloaMREAIQCw</string>
+
+
+
+</resources>

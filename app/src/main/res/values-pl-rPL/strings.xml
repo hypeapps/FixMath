@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tut_1">TWOIM ZADANIEM JEST NAPRAWIENIE RÓWNAŃ</string>
+    <string name="tut_2">ORAZ ODGADNIĘCIE JAKI JEST WYNIK FIGURY ZE ZNAKIEM ZAPYTANIA</string>
+    <string name="tut_3">PAMIĘTAJ! KAŻDY RODZAJ FIGURY MA ZAWSZE TAKĄ SAMĄ WARTOŚĆ</string>
+    <string name="settings">USTAWIENIA</string>
+    <string name="achievements">OSIĄGNIĘCIA</string>
+    <string name="settings_top">USTAWIENIA</string>
+    <string name="sounds">DŹWIĘKI</string>
+    <string name="reset_game">RESET POSTĘPU</string>
+    <string name="choose_challenge">WYBIERZ WYZWANIE:</string>
+</resources>

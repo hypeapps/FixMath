@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelMenuActivity"
+    android:id="@+id/level_menu_layout">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/level_menu_background_image"
+        android:scaleType="fitXY"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPagerLevel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/60"
+        android:id="@+id/level_count_text_view"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_gravity="bottom|center_horizontal"
+
+        android:gravity="center_vertical|center_horizontal">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dot_level_1"
+            android:src="@drawable/gray_dot" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dot_level_2"
+            android:src="@drawable/gray_dot" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dot_level_3"
+            android:src="@drawable/gray_dot" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dot_level_4"
+            android:src="@drawable/gray_dot" />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:id="@+id/back_menu_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:clickable="true"
+        android:background="@drawable/hamburger_03_03"
+        android:layout_marginLeft="10dp"
+        android:onClick="bckMenu"
+        android:layout_marginBottom="10dp" />
+
+
+
+
+
+
+
+</RelativeLayout>

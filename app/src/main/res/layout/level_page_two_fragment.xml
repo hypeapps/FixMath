@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level17"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="17"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="17"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level18"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="18"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="18"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level19"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="19"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="19"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level20"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="20"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="20"
+                android:onClick="playLevel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level21"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="21"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="21"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level22"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="22"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="22"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level23"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="23"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="23"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level24"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="24"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="24"
+                android:onClick="playLevel" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level25"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="25"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="25"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level26"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="26"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="26"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level27"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="27"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="27"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level28"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="28"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="28"
+                android:onClick="playLevel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginBottom="55dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level29"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="29"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="29"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level30"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="30"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="30"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level31"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="31"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="31"
+                android:onClick="playLevel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/level32"
+                android:background="@drawable/level_button_closed"
+                android:layout_gravity="right"
+                android:text="32"
+                android:textColor="@color/closed_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="6dp"
+                android:enabled="false"
+                android:tag="32"
+                android:onClick="playLevel" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

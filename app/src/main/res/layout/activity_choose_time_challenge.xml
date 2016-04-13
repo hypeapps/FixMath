@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseTimeChallenge"
+    android:id="@+id/choose_time_layout">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/choose_time_background_image"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageView6"
+        android:src="@drawable/hamburger_03_03"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:onClick="backToMenu" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:id="@+id/imageView5"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/logo_s"
+        android:layout_marginBottom="5dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="65dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/choose_challenge"
+        android:id="@+id/textView16"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-black"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp" />
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="110dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/five_minutes_ch"
+            android:src="@drawable/timeattac_choose_challenge"
+            android:onClick="FiveMinChallenge"
+            />
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 min"
+                android:id="@+id/minutes1"
+                android:layout_marginTop="40dp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:textSize="17sp"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/best_score"
+                android:id="@+id/textView18"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginTop="30dp"
+                android:textSize="17sp"
+                android:layout_toRightOf="@+id/minutes1"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11.000"
+                android:id="@+id/score5"
+                android:textColor="#ffca0a"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:layout_below="@+id/textView18"
+                android:layout_alignLeft="@+id/textView18"
+                android:textSize="18dp"
+                android:layout_alignRight="@+id/textView18"
+                android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="110dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/three_mintues_ch"
+            android:src="@drawable/timeattac_choose_challenge"
+            android:onClick="ThreeMinChallenge"
+           />
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 min"
+                    android:id="@+id/textView17"
+                    android:layout_marginTop="40dp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/best_score"
+                    android:id="@+id/textView19"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginTop="30dp"
+                    android:textSize="17sp"
+                    android:layout_toRightOf="@+id/textView17"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11.000"
+                    android:id="@+id/score3"
+                    android:textColor="#ffca0a"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_below="@+id/textView19"
+                    android:layout_alignLeft="@+id/textView19"
+                    android:textSize="18dp"
+                    android:layout_alignRight="@+id/textView19"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="110dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/one_minute_ch"
+            android:src="@drawable/timeattac_choose_challenge"
+            android:onClick="OneMinChallenge"
+
+            />
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 min"
+                    android:id="@+id/textView21"
+                    android:layout_marginTop="40dp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/best_score"
+                    android:id="@+id/textView22"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginTop="30dp"
+                    android:textSize="17sp"
+                    android:layout_toRightOf="@+id/textView21"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11.000"
+                    android:id="@+id/score1"
+                    android:textColor="#ffca0a"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_below="@+id/textView22"
+                    android:layout_alignLeft="@+id/textView22"
+                    android:textSize="18dp"
+                    android:layout_alignRight="@+id/textView22"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/leaderboard_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:src="@drawable/leaderboard_button"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="2dp"
+        android:onClick="openLeaderboard"/>
+</RelativeLayout>

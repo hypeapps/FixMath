@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/settings_layout">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/setting_background_image"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:id="@+id/back_to_main_menu"
+        android:src="@drawable/hamburger_03_03"
+        android:onClick="backToMenu"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/settings"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="70dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_top"
+            android:id="@+id/textView13"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:singleLine="false"
+            android:fontFamily="sans-serif-black"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/music"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="5dp">
+
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sounds"
+                android:id="@+id/sounds"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-black"
+                android:onClick="setOnCheckedChangeListener"
+                android:layout_below="@+id/music"
+                android:gravity="center_vertical"
+                android:paddingLeft="60dp"
+                android:paddingRight="50dp"
+                android:textOff="OFF"
+                android:textOn="ON"
+                android:singleLine="true"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reset_game"
+            android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/reset_game"
+            android:id="@+id/textView20"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginLeft="60dp"
+            android:textStyle="bold"
+            android:layout_alignParentBottom="false"
+            android:layout_centerVertical="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/resetGameButton"
+                android:src="@drawable/repeat_level_btn"
+                android:onClick="resetGame"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentTop="false"
+                android:layout_alignBottom="@+id/textView20"
+                android:layout_above="@+id/textView20"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="false"
+                android:paddingRight="40dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reset_game"
+            android:id="@+id/googlePlayLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GOOGLE PLAY GAMES LOG OUT"
+                android:id="@+id/signInText"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageView7"
+                android:src="@drawable/play_button_loggin"
+                android:layout_below="@+id/googlePlayLayout"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:onClick="signinGoogleGames"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/author"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FixMath made by"
+                android:id="@+id/textView24"
+                android:textColor="#FFFDC90A"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:layout_below="@+id/imageView7"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Przemysław Szymkowiak"
+                android:id="@+id/textView25"
+                android:textColor="#FFFDC90A"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:layout_below="@+id/textView24"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pszem.szym@gmail.com"
+                android:id="@+id/textView26"
+                android:textColor="#FFFDC90A"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:layout_below="@+id/textView25"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

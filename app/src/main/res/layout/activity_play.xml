@@ -1,0 +1,755 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayActivity">
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:id="@+id/button"
+        android:clickable="true"
+        android:onClick="Check"
+        android:layout_alignTop="@+id/k0"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/k0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="350dp"
+        android:onClick="TKeyClick"
+        android:text="0"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/k1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k0"
+        android:layout_alignLeft="@+id/k0"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="1"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k1"
+        android:layout_alignLeft="@+id/k1"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="2"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k2"
+        android:layout_alignLeft="@+id/k2"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="3"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k3"
+        android:layout_alignLeft="@+id/k3"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="4"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k4"
+        android:layout_alignLeft="@+id/k4"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="5"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k5"
+        android:layout_alignLeft="@+id/k5"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="6"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k6"
+        android:layout_alignLeft="@+id/k6"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="7"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k7"
+        android:layout_alignLeft="@+id/k7"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="8"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k8"
+        android:layout_alignLeft="@+id/k8"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="9"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k9"
+        android:layout_alignLeft="@+id/k9"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="b"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/k10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/k10"
+        android:layout_alignLeft="@+id/k10"
+        android:layout_marginLeft="25dp"
+        android:onClick="TKeyClick"
+        android:text="e"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/lay"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/var1x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:onClick="CalcClick"
+                android:clickable="false"
+                android:text="_" />
+
+            <TextView
+                android:id="@+id/symbol1x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var1x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:onClick="CalcClick"
+                android:clickable="false"
+                android:text="_" />
+
+            <TextView
+                android:id="@+id/symbol1x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var1x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:onClick="CalcClick"
+                android:clickable="false"
+                android:text="_" />
+
+            <TextView
+                android:id="@+id/symbol1x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var1x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:onClick="CalcClick"
+                android:clickable="false"
+                android:text="_" />
+
+            <TextView
+                android:id="@+id/symbol1x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var1x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:onClick="CalcClick"
+                android:clickable="false"
+                android:text="_" />
+
+            <TextView
+                android:id="@+id/symbol1x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var1x5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:onClick="CalcClick"
+                android:clickable="false"
+                android:text="_" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/var2x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol2x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var2x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol2x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var2x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol2x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var2x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol2x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var2x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol2x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var2x5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/var3x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol3x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var3x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol3x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var3x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol3x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var3x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol3x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var3x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol3x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var3x5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/var4x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol4x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var4x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol4x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var4x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol4x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var4x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol4x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var4x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol4x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var4x5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="_"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/var5x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/blank"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol5x0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var5x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/blank"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol5x1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var5x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/blank"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol5x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var5x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/blank"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol5x3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var5x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/blank"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+            <TextView
+                android:id="@+id/symbol5x4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/blank"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/var5x5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/blank"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:onClick="CalcClick" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

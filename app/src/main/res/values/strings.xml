@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">FixMath</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="blank">         </string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_level_menu">LevelMenu</string>
+    <string name="title_activity_choose_time_challenge">ChooseTimeChallenge</string>
+    <string name="signin_other_error">There was an issue with sign in. Please try again later.</string>
+    <string name="signin_failure">You need to be logged in to use all the features of Google Play Games.</string>
+    <string name="question">\?</string>
+    <string name="tut_1">YOUR GOAL IS TO FIX THE CALCULATIONS</string>
+    <string name="tut_2">AND GET THE CORRECT FIGURE WITH QUESTION MARK</string>
+    <string name="tut_3">REMEMBER! EACH KIND OF FIGURE ALWAYS HAS THE SAME VALUE</string>
+    <string name="settings">SETTINGS</string>
+    <string name="achievements">ACHIEVEMENTS</string>
+    <string name="settings_top">SETTINGS</string>
+    <string name="sounds">SOUNDS</string>
+    <string name="reset_game">RESET GAME</string>
+    <string name="best_score">BEST SCORE</string>
+    <string name="choose_challenge">CHOOSE CHALLENGE:</string>
+
+</resources>

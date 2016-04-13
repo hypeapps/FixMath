@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="background_color1">#262b30</color>
+    <color name="background_color2">#a115d5</color>
+    <color name="animation_score">#36a628</color>
+    <color name="correct_text">#8ec63f</color>
+    <color name="closed_text">#838382</color>
+    <color name="normal_text">#FFFFFF</color>
+
+    <color name="kwadrat_kolor">#f06173</color>
+    <color name="romb_kolor">#48cead</color>
+    <color name="okrag_kolor">#50c1e9</color>
+    <color name="rombf_kolor">#7d40a1</color>
+    <color name="skat_kolor">#ffcd54</color>
+    <color name="okrag_z_kolor">#ffcd54</color>
+    <color name="okat_kolor">#ff6c52</color>
+    <color name="question_kolor">#00ba15</color>
+    <color name="romb_green_kolor">#6fac3b</color>
+    <color name="kwadrat_f_kolor">#8d55ed</color>
+    <color name="kwadrat_blue_kolor">#475bc5</color>
+
+
+
+</resources>

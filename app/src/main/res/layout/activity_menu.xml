@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity"
+    android:weightSum="10"
+    android:background="#5082c9"
+    android:id="@+id/menu_layout">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/menu_background_image"
+        android:background="#5082c9"
+        android:scaleType="fitXY"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:id="@+id/logoMenu"
+        android:src="@drawable/logo_menu"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_gravity="bottom|center_horizontal"
+        android:id="@+id/linearLayout"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center_horizontal">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageDot1"
+            android:src="@drawable/gray_dot" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageDot2"
+            android:src="@drawable/gray_dot" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageDot3"
+            android:src="@drawable/gray_dot" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageDot4"
+            android:src="@drawable/gray_dot" />
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/sign_in_gp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="visible"
+        android:onClick="signIn"
+        android:src="@drawable/play_button_to_loggin"
+        android:layout_marginLeft="7dp"
+        android:layout_alignParentBottom="true" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:id="@+id/shareBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="7dp"
+        android:src="@drawable/share_button"
+        android:onClick="share"/>
+
+
+</RelativeLayout>
