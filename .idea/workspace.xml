@@ -61,9 +61,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab11ebd-b137-4aa0-b8ef-f65e4276bf83" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseGameUtils/BaseGameUtils.iml" afterPath="$PROJECT_DIR$/BaseGameUtils/BaseGameUtils.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pl/hypeapp/fixmath/Level.java" afterPath="$PROJECT_DIR$/app/src/main/java/pl/hypeapp/fixmath/Level.java" />
     </list>
     <ignored path="FixMath.iws" />
@@ -119,8 +118,8 @@
       <file leaf-file-name="Level.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pl/hypeapp/fixmath/Level.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.3546324">
-              <caret line="135" column="19" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.8172043">
+              <caret line="2830" column="32" selection-start-line="2830" selection-start-column="32" selection-end-line="2830" selection-end-column="32" />
               <folding>
                 <element signature="method#Level1#0;class#Level#0" expanded="false" />
                 <element signature="method#Level2#0;class#Level#0" expanded="false" />
@@ -128,6 +127,8 @@
                 <element signature="method#Level4#0;class#Level#0" expanded="false" />
                 <element signature="method#Level5#0;class#Level#0" expanded="false" />
                 <element signature="method#Level6#0;class#Level#0" expanded="false" />
+                <element signature="method#Level7#0;class#Level#0" expanded="false" />
+                <element signature="method#Level8#0;class#Level#0" expanded="false" />
                 <element signature="method#Level9#0;class#Level#0" expanded="false" />
                 <element signature="method#Level10#0;class#Level#0" expanded="false" />
                 <element signature="method#Level11#0;class#Level#0" expanded="false" />
@@ -141,7 +142,6 @@
                 <element signature="method#Level25#0;class#Level#0" expanded="false" />
                 <element signature="method#Level28#0;class#Level#0" expanded="false" />
                 <element signature="method#Level29#0;class#Level#0" expanded="false" />
-                <element signature="method#Level30#0;class#Level#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -3096,7 +3096,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.51002866" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41808873" sideWeight="0.5771558" order="13" side_tool="false" content_ui="tabs" x="-1171" y="438" width="902" height="245" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41808873" sideWeight="0.5771558" order="13" side_tool="false" content_ui="tabs" x="-1171" y="438" width="902" height="245" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32593855" sideWeight="0.47579426" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.6540115" order="10" side_tool="false" content_ui="tabs" />
@@ -3547,8 +3547,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pl/hypeapp/fixmath/Level.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.3546324">
-          <caret line="135" column="19" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.8172043">
+          <caret line="2830" column="32" selection-start-line="2830" selection-start-column="32" selection-end-line="2830" selection-end-column="32" />
           <folding>
             <element signature="method#Level1#0;class#Level#0" expanded="false" />
             <element signature="method#Level2#0;class#Level#0" expanded="false" />
@@ -3556,6 +3556,8 @@
             <element signature="method#Level4#0;class#Level#0" expanded="false" />
             <element signature="method#Level5#0;class#Level#0" expanded="false" />
             <element signature="method#Level6#0;class#Level#0" expanded="false" />
+            <element signature="method#Level7#0;class#Level#0" expanded="false" />
+            <element signature="method#Level8#0;class#Level#0" expanded="false" />
             <element signature="method#Level9#0;class#Level#0" expanded="false" />
             <element signature="method#Level10#0;class#Level#0" expanded="false" />
             <element signature="method#Level11#0;class#Level#0" expanded="false" />
@@ -3569,7 +3571,6 @@
             <element signature="method#Level25#0;class#Level#0" expanded="false" />
             <element signature="method#Level28#0;class#Level#0" expanded="false" />
             <element signature="method#Level29#0;class#Level#0" expanded="false" />
-            <element signature="method#Level30#0;class#Level#0" expanded="false" />
           </folding>
         </state>
       </provider>
