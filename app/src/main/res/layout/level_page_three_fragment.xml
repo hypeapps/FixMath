@@ -35,7 +35,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="33" />
+                android:tag="33"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -51,7 +52,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="34" />
+                android:tag="34"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +69,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="35" />
+                android:tag="35"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,7 +86,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="36" />
+                android:tag="36"
+                android:onClick="playLevel" />
         </LinearLayout>
 
         <LinearLayout
@@ -109,7 +113,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="37" />
+                android:tag="37"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -125,7 +130,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="38" />
+                android:tag="38"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -141,7 +147,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="39" />
+                android:tag="39"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -157,7 +164,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="40" />
+                android:tag="40"
+                android:onClick="playLevel" />
 
         </LinearLayout>
 
@@ -182,7 +190,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="41" />
+                android:tag="41"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -198,7 +207,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="42" />
+                android:tag="42"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -214,7 +224,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="43" />
+                android:tag="43"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -230,7 +241,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="44" />
+                android:tag="44"
+                android:onClick="playLevel" />
         </LinearLayout>
 
         <LinearLayout
@@ -255,7 +267,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="45" />
+                android:tag="45"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -271,7 +284,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="46" />
+                android:tag="46"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -287,7 +301,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="47" />
+                android:tag="47"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -303,7 +318,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="48" />
+                android:tag="48"
+                android:onClick="playLevel" />
         </LinearLayout>
 
     </LinearLayout>

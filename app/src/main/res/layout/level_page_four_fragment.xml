@@ -34,7 +34,8 @@
                 android:fontFamily="sans-serif-black"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
-                android:tag="49" />
+                android:tag="49"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,7 +51,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="50" />
+                android:tag="50"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -66,7 +68,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="51" />
+                android:tag="51"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +85,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="52" />
+                android:tag="52"
+                android:onClick="playLevel" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,7 +112,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="53" />
+                android:tag="53"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -124,7 +129,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="54" />
+                android:tag="54"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -140,7 +146,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="55" />
+                android:tag="55"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -156,7 +163,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="56" />
+                android:tag="56"
+                android:onClick="playLevel" />
 
         </LinearLayout>
 
@@ -181,7 +189,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="57" />
+                android:tag="57"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -197,7 +206,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="58" />
+                android:tag="58"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -213,7 +223,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="59" />
+                android:tag="59"
+                android:onClick="playLevel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -229,7 +240,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
-                android:tag="60" />
+                android:tag="60"
+                android:onClick="playLevel" />
         </LinearLayout>
 
         <LinearLayout

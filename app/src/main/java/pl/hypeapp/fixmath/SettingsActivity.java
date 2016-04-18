@@ -130,6 +130,10 @@ public class SettingsActivity extends BaseGameActivity implements GoogleApiClien
     }
 
     public void resetGame(View view){
+        SharedPreferences prefs = getSharedPreferences("LVL", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.clear();
+        editor.commit();
         sfxManager.KeyboardClickPlay(true);
     }
 

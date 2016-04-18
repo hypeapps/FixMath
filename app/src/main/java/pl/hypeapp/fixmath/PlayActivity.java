@@ -381,6 +381,10 @@ public class PlayActivity extends BaseGameActivity implements
         resultID = getResources().getIdentifier(resultTextViewId, "id", getPackageName());
         textView = (TextView) findViewById(resultID);
         textView.setVisibility(View.VISIBLE);
+
+        if(calculations.Result.length() >= 2){
+            textView.setTextSize(24);
+        }
         textView.setText(calculations.Result);
 
         int idParent = ((View)textView.getParent()).getId();
