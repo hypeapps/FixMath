@@ -1,7 +1,7 @@
 package pl.hypeapp.fixmath;;
 
 
-import android.util.Log;
+
 
 public class Logic {
 
@@ -79,12 +79,11 @@ public class Logic {
         for (int i = 0; i < FirstLineAnswer.length; i++){
             if (FirstLineAnswer[i].equals(keyboard.clickTab[1][i])){
                 helper++;
-                Log.e("LOGIC", " FIRSTLINE LOOP" + i + " HELPER W LOOP: " + helper);
+
             }
         }
 
         if(helper == FirstLineAnswer.length){
-            Log.e("LOGIC", " JESTEM FIRSTLINE /helper " + helper);
             helper = 0;
             return true;
         }
@@ -97,13 +96,12 @@ public class Logic {
         for (int i = 0; i < SecondLineAnswer.length; i++){
             if (SecondLineAnswer[i].equals(keyboard.clickTab[2][i])){
                 helper++;
-                Log.e("LOGIC", " SECONDLINE LOOP" + i + "helper: " + helper);
+
 
             }
         }
 
         if(helper == SecondLineAnswer.length){
-            Log.e("LOGIC", " JESTEM SECONDLINE /helper " + helper);
             helper = 0;
             return true;
         }
@@ -115,13 +113,13 @@ public class Logic {
         for (int i = 0; i < ThirdLineAnswer.length ; i++){
             if (ThirdLineAnswer[i].equals(keyboard.clickTab[3][i])){
                 helper++;
-                Log.e("LOGIC", " THIRDLINE LOOP " + i + " helper: " + helper);
+
 
             }
         }
 
         if(helper == ThirdLineAnswer.length){
-            Log.e("LOGIC", " JESTEM THIRDLINE /helper " + helper);
+
             helper = 0;
             return true;
         }
@@ -134,13 +132,12 @@ public class Logic {
         for (int i = 0; i < FourLineAnswer.length; i++){
             if (FourLineAnswer[i].equals(keyboard.clickTab[4][i])){
                 helper++;
-                Log.e("LOGIC", " 4 LOOP" + i + "helper: " + helper);
+
 
             }
         }
 
         if(helper == FourLineAnswer.length){
-            Log.e("LOGIC", " JESTEM 4 /helper " + helper);
             helper = 0;
             return true;
         }
@@ -153,13 +150,13 @@ public class Logic {
         for (int i = 0; i < FiveLineAnswer.length; i++){
             if (FiveLineAnswer[i].equals(keyboard.clickTab[5][i])){
                 helper++;
-                Log.e("LOGIC", " 5 LOOP" + i + "helper: " + helper);
+
 
             }
         }
 
         if(helper == FiveLineAnswer.length){
-            Log.e("LOGIC", " JESTEM 5 /helper " + helper);
+
             helper = 0;
             return true;
         }
@@ -171,13 +168,13 @@ public class Logic {
         for (int i = 0; i < this.timeLineAnswer.length; i++){
             if (this.timeLineAnswer[i].equals(keyboard.TimeTab[i])){
                 helper++;
-                Log.e("LOGIC", " 5 LOOP" + i + "helper: " + helper);
+
 
             }
         }
 
         if(helper == this.timeLineAnswer.length){
-            Log.e("LOGIC", " JESTEM 5 /helper " + helper);
+
             helper = 0;
             return true;
         }

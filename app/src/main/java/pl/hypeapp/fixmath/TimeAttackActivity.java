@@ -1,11 +1,10 @@
-package pl.hypeapp.fixmath;;
+package pl.hypeapp.fixmath;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -27,6 +26,7 @@ import com.nineoldandroids.animation.Animator;
 import com.plattysoft.leonids.ParticleSystem;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -59,6 +59,8 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
     private int score = 0;
     private int multipler = 0;
     private int countSeconds = 3;
+
+    ArrayList<Integer> levelsList = new ArrayList<>();
 
     Timer timer;
 
@@ -129,7 +131,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e("onDest", "onDestroy");
+
         unbindDrawables(findViewById(R.id.time_attack_layout));
         System.gc();
     }
@@ -141,7 +143,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         if (view instanceof ViewGroup) {
             for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
                 unbindDrawables(((ViewGroup) view).getChildAt(i));
-                Log.e("onDest", "onDestroy");
+
             }
             ((ViewGroup) view).removeAllViews();
         }
@@ -152,7 +154,6 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
     void setupIntersitialAds(){
 
             AdRequest adRequest = new AdRequest.Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                     .build();
 
             intersitialAdOnRepeat = new InterstitialAd(this);
@@ -160,8 +161,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
             intersitialAdOnRepeat.setAdListener(new AdListener() {
                 @Override
                 public void onAdClosed() {
-                    Log.e("showNextLevelOrClose", "nxtlevel0");
-//                    showNextLevelOrClose(levelActual);
+                    repeatGame();
                 }
             });
             intersitialAdOnRepeat.loadAd(adRequest);
@@ -180,6 +180,12 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
 
     }
 
+    void repeatGame(){
+        Intent x = new Intent(TimeAttackActivity.this, TimeAttackActivity.class);
+        startActivity(x);
+        finish();
+    }
+
     boolean showIntersitialAdOnClose(InterstitialAd intersitialAdOnClose, boolean isShowInterstialOnClose){
             if(isShowInterstialOnClose) {
                 if (intersitialAdOnClose.isLoaded()) {
@@ -191,6 +197,15 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
             }else {
                 return false;
             }
+    }
+
+    boolean showIntersitialAdOnNextLevel(InterstitialAd intersitialAdOnClose){
+        if (intersitialAdOnClose.isLoaded()) {
+            intersitialAdOnClose.show();
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
@@ -220,7 +235,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
             tLine.setVisibility(View.VISIBLE);
             correctFigures.setVisibility(View.VISIBLE);
             backLine.setVisibility(View.VISIBLE);
-            backLine.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            backLine.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.aaas, backLine.getWidth(), backLine.getHeight()));
             textScoreView.setVisibility(View.VISIBLE);
             multiplerView.setVisibility(View.VISIBLE);
@@ -246,8 +261,8 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         isShowInterstialOnClose = true;
         SharedPreferences scorePref = getSharedPreferences("SCORE", 0);
         SharedPreferences.Editor editor = scorePref.edit();
-        int bestScore = scorePref.getInt("BEST_SCORE_INT" + this.timeChallenge, 0);
-        String bestScoreString = scorePref.getString("BEST_SCORE_STRING" + this.timeChallenge, "0");
+        int bestScore = scorePref.getInt("BEST_SCORE_INT" + timeChallenge, 0);
+        String bestScoreString = scorePref.getString("BEST_SCORE_STRING" + timeChallenge, "0");
         TextView yourScoreView = (TextView) findViewById(R.id.your_score);
         TextView bestScoreView = (TextView) findViewById(R.id.best_score);
         TextView scoreView = (TextView) findViewById(R.id.scoreView);
@@ -260,8 +275,8 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
 
 
         if(this.score > bestScore){
-            editor.putInt("BEST_SCORE_INT" + this.timeChallenge, this.score);
-            editor.putString("BEST_SCORE_STRING" + this.timeChallenge, scoreView.getText().toString());
+            editor.putInt("BEST_SCORE_INT" + timeChallenge, this.score);
+            editor.putString("BEST_SCORE_STRING" + timeChallenge, scoreView.getText().toString());
             editor.commit();
             yourScoreView.setText(scoreView.getText().toString());
             bestScoreView.setText(scoreView.getText().toString());
@@ -312,7 +327,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
                             //TU POPRAWIC
                             startTimer(timeChallenge);
 
-                            level = new Level(2);
+                            setNewLevel();
                             setVisibilityComponents(false, true);
                             setBackgroundColor();
                             setNewCalculationsAndLogic(passedLinesIndexer);
@@ -389,7 +404,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
                     ImageView rl = (ImageView) findViewById(R.id.time_attack_layoutView);
                     ImageView rl1 = (ImageView) findViewById(R.id.time_attack_background);
                     int idBackground = (Integer) rl1.getTag();
-                    rl.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                    rl.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                             idBackground , rl1.getWidth(),rl1.getHeight()));
                     setBackgroundColor();
                     setNewCalculationsAndLogic(passedLinesIndexer);
@@ -438,7 +453,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
 
     private void correctLevelAnimation() {
             ImageView backLine = (ImageView) findViewById(R.id.back_line);
-            backLine.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            backLine.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                 R.drawable.correct , backLine.getWidth(), backLine.getHeight()));
             YoYo.with(Techniques.ZoomIn)
                     .duration(300)
@@ -447,7 +462,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
 
     private void restoreCorrectLineAnimation(){
         ImageView backLine = (ImageView) findViewById(R.id.back_line);
-        backLine.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+        backLine.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                 R.drawable.aaas, backLine.getWidth(), backLine.getHeight()));
         YoYo.with(Techniques.ZoomIn)
                 .duration(500)
@@ -488,6 +503,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
 
     private void resetCorrectFigures() {
         TextView correctFigure;
+        ImageView correctFigureIW;
         for (int i = 1; i <= 5; i++) {
             String TextViewID = "correctFigure_" + i;
             int correctFigureID = getResources().getIdentifier(TextViewID, "id", getPackageName());
@@ -496,6 +512,15 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
             correctFigure.setBackgroundResource(0);
             correctFigure.setText("");
         }
+
+        for (int i = 1; i <= 5; i++) {
+            String ImageViewID = "t_correct_f" + i;
+            int correctFigureID = getResources().getIdentifier(ImageViewID, "id", getPackageName());
+            correctFigureIW = (ImageView) findViewById(correctFigureID);
+            correctFigureIW.setVisibility(View.GONE);
+            correctFigureIW.setBackgroundResource(0);
+        }
+
 
         YoYo.with(Techniques.ZoomIn)
                 .playOn(findViewById(R.id.correctFigures));
@@ -576,7 +601,33 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
     }
 
     private void setNewLevel() {
-        this.level = new Level(1);
+        int level = 0;
+        Random randomizer = new Random();
+
+        if(levelsList.size() <= 2){
+            do{
+
+                level = randomizer.nextInt(15);
+                level += 1;
+
+
+            }while(levelsList.contains(level));
+
+            levelsList.add(level);
+        }else if(levelsList.size() > 2){
+
+            do{
+
+                level = randomizer.nextInt(60);
+                level += 1;
+
+
+            }while(levelsList.contains(level));
+
+            levelsList.add(level);
+        }
+
+        this.level = new Level(level);
         setNewCalculationsAndLogic(this.passedLinesIndexer = 0);
     }
 
@@ -647,39 +698,39 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         TextView correctFrameTextView = (TextView) findViewById(R.id.correctFigure_1);
         int correctFrameFigureWidth = correctFrameTextView.getLayoutParams().width;
         int correctFrameFigureHeight = correctFrameTextView.getLayoutParams().height;
-        Log.e("width.height ", "" + correctFrameFigureWidth + " " + correctFrameFigureHeight);
+
         if (level.GetTimeAttackCorrectFigures(index).equals("k")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.kwadrat_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(index).equals("o")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.okrag_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(index).equals("r")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.romb_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(index).equals("s")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.skat_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(index).equals("rf")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.romb_f_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(index).equals("oz")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.okrag_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(index).equals("ok")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.okat_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(index).equals("q")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.question_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         }else if (level.GetTimeAttackCorrectFigures(index).equals("kf")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.kwadrat_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         }else if (level.GetTimeAttackCorrectFigures(index).equals("kb")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.kwadrat_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         }else if (level.GetTimeAttackCorrectFigures(index).equals("rg")) {
-            correctFrameFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFrameFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.romb_ramka, correctFrameFigureWidth, correctFrameFigureHeight));
         }
     }
@@ -690,37 +741,37 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         int correctFrameFigureHeight = correctFrameTextView.getLayoutParams().height;
         correctFigure.setVisibility(View.INVISIBLE);
         if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("k")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.kwadrat, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("o")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.okrag, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("r")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.romb, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("s")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.skat, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("rf")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.romb_f, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("oz")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.okrag_z, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("ok")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.okat, correctFrameFigureWidth, correctFrameFigureHeight));
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("q")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.question, correctFrameFigureWidth, correctFrameFigureHeight));
         }else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("kf")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.kwadrat_f, correctFrameFigureWidth, correctFrameFigureHeight));
         }else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("kb")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.kwadrat_blue, correctFrameFigureWidth, correctFrameFigureHeight));
         }else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("rg")) {
-            correctFigure.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+            correctFigure.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                     R.drawable.romb_green, correctFrameFigureWidth, correctFrameFigureHeight));
         }
 
@@ -764,7 +815,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         ImageView imageView = (ImageView) findViewById(R.id.t_var_ImageView_0);
         int width = imageView.getLayoutParams().width;
         int height = imageView.getLayoutParams().height;
-        Log.e("w.h clickable", " " + width + " " + height);
+
         for (int i = 0; i < calculations.VariablesCount; i++) {
             String TextViewId = "t_var" + variable;
             ID = getResources().getIdentifier(TextViewId, "id", getPackageName());
@@ -778,52 +829,53 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
             ID = getResources().getIdentifier(ImageViewId, "id", getPackageName());
             imageView = (ImageView) findViewById(ID);
             imageView.setVisibility(View.VISIBLE);
+
             variable++;
 
 
             if (figures[i].equals("k")) {
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.kwadrat, width, height));
                 textView.setTag("k");
             } else if (figures[i].equals("o")) {
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.okrag, width, height));
                 textView.setTag("o");
             } else if (figures[i].equals("r")) {
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.romb, width, height));
                 textView.setTag("r");
             } else if (figures[i].equals("s")) {
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.skat, width, height));
                 textView.setTag("s");
             } else if (figures[i].equals("rf")) {
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.romb_f, width, height));
                 textView.setTag("rf");
             } else if (figures[i].equals("oz")) {
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.okrag_z, width, height));
                 textView.setTag("oz");
             } else if (figures[i].equals("ok")) {
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.okat, width, height));
                 textView.setTag("ok");
             } else if (figures[i].equals("q")) {
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.question, width, height));
                 textView.setText("?");
                 textView.setTag("q");
             }else  if(figures[i].equals("kf")){
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.kwadrat_f, width, height));
                 textView.setTag("kf");
             }else  if(figures[i].equals("kb")){
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.kwadrat_blue, width, height));
                 textView.setTag("kb");
             }else  if(figures[i].equals("rg")){
-                imageView.setImageBitmap(bitmapManager.decodeSampledBitmapFromResource(getResources(),
+                imageView.setImageBitmap(BitmapManager.decodeSampledBitmapFromResource(getResources(),
                         R.drawable.romb_green, width, height));
                 textView.setTag("rg");
             }
@@ -856,6 +908,12 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         String resultTextViewId = "t_var" + (endStart + 1);
         resultID = getResources().getIdentifier(resultTextViewId, "id", getPackageName());
         textView = (TextView) findViewById(resultID);
+        if(calculations.Result.length() >= 2){
+            textView.setTextSize(24);
+        }
+        if(calculations.Result.length() >= 4){
+            textView.setTextSize(18);
+        }
         textView.setText(calculations.Result);
         textView.setVisibility(View.VISIBLE);
 
@@ -1137,7 +1195,6 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         isClicked = true;
         clickedFigureID = view.getId();
 
-        Log.d("timeattack", "figureclick");
 
 
         //FIGURE ANIMATION
@@ -1171,7 +1228,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
             TextView xt = (TextView) findViewById(ID);
             on = xt.getId();
             if (clickedFigureID == on) {
-                Log.e("CLICK", "HOP");
+
                 TextViewIndex = i;
 
             }
@@ -1532,6 +1589,10 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
 
     public void restartLevel(View view) {
         sfxManager.KeyboardClickPlay(true);
+        if(!showIntersitialAdOnNextLevel(intersitialAdOnRepeat)){
+            repeatGame();
+        }
+
     }
 
     public void backToChallengeMenu(View view) {
@@ -1660,7 +1721,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
                 mResolvingConnectionFailure = false;
             }
         }
-        Log.e("GoogleApi", "onConnectionFailed");
+
 
 
 
@@ -1686,10 +1747,10 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
                 editor.putBoolean("SIGN_STATUS", false);
                 editor.commit();
 
-                Log.e("GoogleApi", "onActivityResult");
+
             }
         }
 
-        Log.e("googleApi", "onActvityResult2");
+
     }
 }

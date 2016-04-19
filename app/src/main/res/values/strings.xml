@@ -20,5 +20,6 @@
     <string name="reset_game">RESET GAME</string>
     <string name="best_score">BEST SCORE</string>
     <string name="choose_challenge">CHOOSE CHALLENGE:</string>
+    <string name="reset">The progress was reset.</string>
 
 </resources>

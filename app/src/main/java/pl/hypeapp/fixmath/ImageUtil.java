@@ -1,11 +1,9 @@
 package pl.hypeapp.fixmath;
 
 import android.app.Application;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -77,7 +75,6 @@ public class ImageUtil extends Application {
         if (view instanceof ViewGroup) {
             for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
                 unbindDrawables(((ViewGroup) view).getChildAt(i));
-                Log.e("onDest", "onDestroy");
             }
             ((ViewGroup) view).removeAllViews();
         }

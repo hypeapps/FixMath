@@ -4,12 +4,12 @@ package pl.hypeapp.fixmath;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -62,7 +62,6 @@ public class SettingsActivity extends BaseGameActivity implements GoogleApiClien
 
         toggle = (Switch) findViewById(R.id.sounds);
         final SharedPreferences sharedPreferences = getSharedPreferences("SOUNDS", MODE_PRIVATE);
-        Log.e("isCheck SP", " " + sharedPreferences.getBoolean("ISMUTE", false));
         if(!sharedPreferences.getBoolean("ISMUTE", false)){
             toggle.setChecked(true);
         }else{
@@ -75,20 +74,17 @@ public class SettingsActivity extends BaseGameActivity implements GoogleApiClien
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Log.e("isCheck1 out", " " + isChecked);
+
                 if (isChecked) {
-                    Log.e("isCheck 1in", " " + isChecked);
                     editor.putBoolean("ISMUTE", false);
                     editor.commit();
 
 
                 } else {
-                    Log.e("isCheck 2in", " " + isChecked);
                     editor.putBoolean("ISMUTE", true);
                     editor.commit();
 
                 }
-                Log.e("isCheck SP", " " + sharedPreferences.getBoolean("ISMUTE", false));
             }
         });
         myProgress = MyProgress.getInstance();
@@ -134,7 +130,21 @@ public class SettingsActivity extends BaseGameActivity implements GoogleApiClien
         SharedPreferences.Editor editor = prefs.edit();
         editor.clear();
         editor.commit();
+
+        prefs = getSharedPreferences("LEVEL_COUNT", MODE_PRIVATE);
+        editor = prefs.edit();
+        editor.clear();
+        editor.commit();
+
+        prefs = getSharedPreferences("SCORE", MODE_PRIVATE);
+        editor = prefs.edit();
+        editor.clear();
+        editor.commit();
+
         sfxManager.KeyboardClickPlay(true);
+
+        Toast.makeText(this, getString(R.string.reset),
+                Toast.LENGTH_LONG).show();
     }
 
 
@@ -185,7 +195,6 @@ public class SettingsActivity extends BaseGameActivity implements GoogleApiClien
             }
         }
 
-        Log.e("GoogleApi", "onConnectionFailed");
     }
 
     protected void onActivityResult(int requestCode, int resultCode,
@@ -208,11 +217,9 @@ public class SettingsActivity extends BaseGameActivity implements GoogleApiClien
                 editor.putBoolean("SIGN_STATUS", false);
                 editor.commit();
 
-                Log.e("GoogleApi", "onActivityResult");
             }
         }
 
-        Log.e("googleApi", "onActvityResult2");
     }
 
 
@@ -220,7 +227,6 @@ public class SettingsActivity extends BaseGameActivity implements GoogleApiClien
     protected void onStop() {
         super.onStop();
         mGoogleApi.disconnect();
-        Log.e("googleApi", "onStop");
     }
 
     @Override

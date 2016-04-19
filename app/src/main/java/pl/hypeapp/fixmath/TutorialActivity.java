@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -32,7 +31,6 @@ public class TutorialActivity extends Activity {
 
 
     public void OkeyButton(View view) {
-        Log.e("aaaaa", "tutotial");
         sfxManager.KeyboardClickPlay(true);
         Intent i = new Intent(TutorialActivity.this, PlayActivity.class);
         i.putExtra("LEVEL", 1);

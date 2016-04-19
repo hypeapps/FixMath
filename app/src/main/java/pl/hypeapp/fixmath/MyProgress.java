@@ -2,9 +2,7 @@ package pl.hypeapp.fixmath;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.util.Log;
-import android.widget.TextView;
+
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.Games;
@@ -51,7 +49,6 @@ public class MyProgress {
 
             for(int i = 1; i <= 5;i++){
                 if(isUnlockedAchievement(myProgressAchievement, i)){
-                    Log.e("UNLOCK", "arcade" + i);
                     String achievement = "arcade" + i;
                     Games.Achievements.unlock(googleApiClient, context.getString(context.getResources().getIdentifier(achievement, "string",
                             context.getPackageName())));
@@ -108,7 +105,6 @@ public class MyProgress {
         if(!sharedPreferences.getBoolean("level" + level, false)) {
             editor.putBoolean("level" + level, true);
             editor.putInt("LEVEL_COUNT", ++levelCountIncremented);
-            Log.e("LEVELCOUNT", "" + sharedPreferences.getInt("LEVEL_COUNT", 0));
             editor.commit();
         }
     }

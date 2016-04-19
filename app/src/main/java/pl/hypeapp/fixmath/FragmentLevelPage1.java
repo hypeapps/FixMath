@@ -1,7 +1,6 @@
 package pl.hypeapp.fixmath;
 
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

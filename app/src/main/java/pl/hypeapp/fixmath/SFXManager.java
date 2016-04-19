@@ -2,12 +2,10 @@ package pl.hypeapp.fixmath;
 
 
 import android.content.Context;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
-import android.util.Log;
 
-import com.google.android.gms.common.api.GoogleApiClient;
+
+
 
 public class SFXManager implements MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnErrorListener {
 

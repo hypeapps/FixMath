@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -71,7 +71,7 @@ public class MenuActivity extends FragmentActivity implements
             googlePlayBtn.setImageResource(R.drawable.play_button_to_loggin);
         }
         sharedPref = getSharedPreferences("SOUNDS", MODE_PRIVATE);
-        Log.e("soundsPref", " " + sharedPref.getBoolean("ISMUTE", false));
+
         sfxManager = new SFXManager(this, sharedPref.getBoolean("ISMUTE", false));
 
         ImageView v = (ImageView) findViewById(R.id.imageDot1);
@@ -128,7 +128,7 @@ public class MenuActivity extends FragmentActivity implements
                 mResolvingConnectionFailure = false;
             }
         }
-        Log.e("GoogleApi", "onConnectionFailed");
+
 
         googlePlayBtn.setVisibility(View.VISIBLE);
 
@@ -149,7 +149,6 @@ public class MenuActivity extends FragmentActivity implements
 
     @Override
     public void onConnectionSuspended(int i) {
-        Log.e("googleApi", "onConnectionSuspend");
         mGoogleApiClient.connect();
     }
 
@@ -159,7 +158,6 @@ public class MenuActivity extends FragmentActivity implements
         if (mExplicitSignOut) {
             mGoogleApiClient.connect();
             googlePlayBtn.setImageResource(R.drawable.play_button_loggin);
-            Log.e("AA", "AAA");
         } else {
             googlePlayBtn.setImageResource(R.drawable.play_button_to_loggin);
         }
@@ -169,7 +167,6 @@ public class MenuActivity extends FragmentActivity implements
     protected void onStop() {
         super.onStop();
         mGoogleApiClient.disconnect();
-        Log.e("googleApi", "onStop");
 
     }
 
@@ -193,11 +190,11 @@ public class MenuActivity extends FragmentActivity implements
                 editor.putBoolean("SIGN_STATUS", false);
                 editor.commit();
 
-                Log.e("GoogleApi", "onActivityResult");
+
             }
         }
 
-        Log.e("googleApi", "onActvityResult2");
+
     }
 
 

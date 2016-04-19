@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 
 
@@ -24,7 +23,6 @@ public class SplashScreenActivity extends Activity  {
 
         imageUtil = (ImageUtil) getApplication();
 
-        Log.e("apiGames", "onCreate");
         ImageView splashScreen = (ImageView)findViewById(R.id.splash_screen_imageview);
         imageUtil.setImageFirst(splashScreen, R.drawable.splash_screen );
 
@@ -55,7 +53,6 @@ public class SplashScreenActivity extends Activity  {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e("onDest", "onDestroy");
         imageUtil.unbindDrawables(findViewById(R.id.splash_screen));
         System.gc();
     }

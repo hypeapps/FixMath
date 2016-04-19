@@ -3,7 +3,6 @@ package pl.hypeapp.fixmath;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -187,7 +186,7 @@ public class ChooseTimeChallenge extends BaseGameActivity implements GoogleApiCl
                 mResolvingConnectionFailure = false;
             }
         }
-        Log.e("GoogleApi", "onConnectionFailed");
+
 
 
 
@@ -213,10 +212,10 @@ public class ChooseTimeChallenge extends BaseGameActivity implements GoogleApiCl
                 editor.putBoolean("SIGN_STATUS", false);
                 editor.commit();
 
-                Log.e("GoogleApi", "onActivityResult");
+
             }
         }
 
-        Log.e("googleApi", "onActvityResult2");
+
     }
 }

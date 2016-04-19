@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +22,10 @@ public class FragmentLevelPage3 extends Fragment {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("LVL", getActivity().MODE_PRIVATE);
         TextView levelView;
         int levels = sharedPreferences.getInt("LEVEL_COUNT", 0);
-        Log.e("LEVELS", " "+ levels);
 
         if(levels  >= 32) {
             for (int i = 33; i <= levels + 3; i++) {
-                Log.e("LEVELS2", " "+ i);
+
                 if (i > 48) {
                     break;
                 }

@@ -9,7 +9,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.util.Log;
+
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -134,7 +134,6 @@ public class PlayActivity extends BaseGameActivity implements
     void setupIntersitialAds(final int levelActual){
         if(levelActual % 2 == 0) {
             AdRequest adRequest = new AdRequest.Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                     .build();
 
             intersitialAdOnNextLevel = new InterstitialAd(this);
@@ -142,7 +141,7 @@ public class PlayActivity extends BaseGameActivity implements
             intersitialAdOnNextLevel.setAdListener(new AdListener() {
                 @Override
                 public void onAdClosed() {
-                    Log.e("showNextLevelOrClose", "nxtlevel0");
+
                     showNextLevelOrClose(levelActual);
                 }
             });
@@ -163,16 +162,16 @@ public class PlayActivity extends BaseGameActivity implements
     }
 
     private void showNextLevelOrClose(int levelActual) {
-        Log.e("showNextLevelOrClose", "nxtlevel0");
+
         if(isNextLevel(levelActual)){
-            Log.e("showNextLevelOrClose", "nxtlevel");
+
             Intent i = new Intent(PlayActivity.this, PlayActivity.class);
             i.putExtra("LEVEL", levelActual + 1);
             startActivity(i);
             finish();
 
         }else{
-            Log.e("showNextLevelOrClose", "closeevel");
+
             Intent x = new Intent(PlayActivity.this, LevelMenuActivity.class);
             startActivity(x);
             finish();
@@ -208,7 +207,7 @@ public class PlayActivity extends BaseGameActivity implements
     }
 
     boolean isNextLevel(int levelActual1){
-        if(levelActual1 + 1 < 60){
+        if(levelActual1 + 1 <= 60){
             return true;
         }else{
             return false;
@@ -385,11 +384,17 @@ public class PlayActivity extends BaseGameActivity implements
         if(calculations.Result.length() >= 2){
             textView.setTextSize(24);
         }
+        if(calculations.Result.length() >= 4){
+            textView.setTextSize(18);
+        }
+        if(calculations.Result.length() >= 5){
+            textView.setTextSize(15);
+        }
         textView.setText(calculations.Result);
 
         int idParent = ((View)textView.getParent()).getId();
         ArrayIdLinesFill();
-        Log.e("MARGINY", "SC " + calculations.SymbolsCount + "CLID " + calcID[0] + "PARID " + idParent);
+
 
 
         howManyLines++;
@@ -631,11 +636,9 @@ public class PlayActivity extends BaseGameActivity implements
 
                 SharedPreferences sharedPreferences = getSharedPreferences("LVL", MODE_PRIVATE);
 
-
+                myProgress.levelPassed(levelActual1, this);
                 myProgress.unlockAchievement(this, sharedPreferences.getInt("LEVEL_COUNT", 0));
                 myProgress.updateProgress(googleApiClient, this);
-                myProgress.levelPassed(levelActual1, this);
-
 
             }
 
@@ -946,9 +949,9 @@ public class PlayActivity extends BaseGameActivity implements
                 ID = getResources().getIdentifier(TextViewId, "id", getPackageName());
                 TextView xt = (TextView) findViewById(ID);
                 on = xt.getId();
-                Log.e("CLICK", ""+ ClickOn + " " + on + " " + i + "/" + z);
+
                 if (ClickOn == on){
-                    Log.e("CLICK", "HOP");
+
                     TextViewX = i;
                     TextViewY = z;
                     break outerloop;
@@ -1267,7 +1270,6 @@ public class PlayActivity extends BaseGameActivity implements
             this.BlankPointer = blankPointer;
 
             //Pointer settings
-            Log.e("HAHA", "IN HOP");
             pointerParams = (RelativeLayout.LayoutParams) blankPointer.getLayoutParams();
             pointerParams.addRule(RelativeLayout.ALIGN_RIGHT, ClickOn);
             pointerParams.addRule(RelativeLayout.ALIGN_LEFT, ClickOn);
@@ -1295,7 +1297,6 @@ public class PlayActivity extends BaseGameActivity implements
 
 
             //Pointer settings
-            Log.e("HAHA", "IN HOP");
             pointerParams = (RelativeLayout.LayoutParams) blankPointer.getLayoutParams();
             pointerParams.addRule(RelativeLayout.ALIGN_RIGHT, ClickOn);
             pointerParams.addRule(RelativeLayout.ALIGN_LEFT, ClickOn);
@@ -1634,7 +1635,7 @@ public class PlayActivity extends BaseGameActivity implements
                 mResolvingConnectionFailure = false;
             }
         }
-        Log.e("GoogleApi", "onConnectionFailed");
+
 
 
 
@@ -1660,11 +1661,11 @@ public class PlayActivity extends BaseGameActivity implements
                 editor.putBoolean("SIGN_STATUS", false);
                 editor.commit();
 
-                Log.e("GoogleApi", "onActivityResult");
+
             }
         }
 
-        Log.e("googleApi", "onActvityResult2");
+
     }
 
 }
