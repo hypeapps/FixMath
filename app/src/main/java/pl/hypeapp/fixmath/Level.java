@@ -821,7 +821,7 @@ public class Level {
         //  5+5+5-5=15
 
         this.Variables.add(new String[]{"5", "5", "5","5"});
-        this.Result.add("15");
+        this.Result.add("10");
         this.Symbols.add(new String[] {"+", "+" ,"-"});
         this.Figures.add(new String[] {"oz", "oz", "oz","oz"});
         this.ColumnStart.add(0);
@@ -1679,10 +1679,10 @@ public class Level {
         this.ResultTexts.add("4");
 
 
-        // 4x4/2x2=4
+        // 4x4/2x2=16
 
         this.Variables.add(new String[]{"4", "4", "2","2"});
-        this.Result.add("4");
+        this.Result.add("16");
         this.Symbols.add(new String[] {multiplerCh, divideCh,multiplerCh});
         this.Figures.add(new String[] {"r", "r", "rf", "rf"});
         this.ColumnStart.add(0);
@@ -1964,7 +1964,7 @@ public class Level {
 
         // 4x4x4=54
         this.Variables.add(new String[]{"4", "4", "4"});
-        this.Result.add("54");
+        this.Result.add("64");
         this.Symbols.add(new String[] {multiplerCh,multiplerCh});
         this.Figures.add(new String[] {"rf", "rf", "rf"});
         this.ColumnStart.add(0);
@@ -2227,7 +2227,7 @@ public class Level {
 
         //  2x3x11=55
 
-        this.Variables.add(new String[]{"2" , "3", "11", "55"});
+        this.Variables.add(new String[]{"2" , "3", "11", "66"});
         this.Result.add("");
         this.Symbols.add(new String[] {multiplerCh, multiplerCh});
         this.Figures.add(new String[] {"s", "rf", "rg", "q"});
