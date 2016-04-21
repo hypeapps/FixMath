@@ -34,7 +34,7 @@ public class PlayActivity extends BaseGameActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     public int ClickOn, calcLineSwitch, Up, Down, LineID;
-    public View BlankPointer;
+    public View BlankPointer = null;
     public boolean clicked;
     private boolean isKeyboradOpen = false;
     public ArrayList<TextView> TextViews;
@@ -1487,15 +1487,21 @@ public class PlayActivity extends BaseGameActivity implements
     }
 
     public void OpenPointerAnimation(){
-        YoYo.with(Techniques.FlipInX)
-                .duration(500)
-                .playOn(findViewById(this.BlankPointer.getId()));
+        if(BlankPointer!= null) {
+            ImageView pointer = (ImageView) findViewById(BlankPointer.getId());
+            YoYo.with(Techniques.FlipInX)
+                    .duration(500)
+                    .playOn(pointer);
+        }
     }
 
     public void PointerAnimation(){
-        YoYo.with(Techniques.ZoomOut)
-                .duration(200)
-                .playOn(findViewById(this.BlankPointer.getId()));
+        if(BlankPointer != null) {
+            ImageView pointer = (ImageView) findViewById(BlankPointer.getId());
+            YoYo.with(Techniques.ZoomOut)
+                    .duration(200)
+                    .playOn(pointer);
+        }
     }
 
     public void SetVisibleLines(){

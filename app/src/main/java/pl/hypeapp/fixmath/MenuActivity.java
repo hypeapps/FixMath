@@ -348,7 +348,7 @@ public class MenuActivity extends FragmentActivity implements
         sfxManager.KeyboardClickPlay(true);
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, "Hey checkout  ");
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share));
         startActivity(Intent.createChooser(intent, "Share"));
     }
 

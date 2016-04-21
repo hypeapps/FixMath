@@ -19,5 +19,6 @@
     <string name="best_score" translatable="false">BEST SCORE</string>
     <string name="choose_challenge">CHOOSE CHALLENGE:</string>
     <string name="reset">The progress was reset.</string>
+    <string name="share">Hey, checkout FixMath https://play.google.com/store/apps/details?id=pl.hypeapp.fixmath</string>
 
 </resources>

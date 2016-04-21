@@ -182,6 +182,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
 
     void repeatGame(){
         Intent x = new Intent(TimeAttackActivity.this, TimeAttackActivity.class);
+        x.putExtra("challenge", timeChallenge);
         startActivity(x);
         finish();
     }
@@ -1485,15 +1486,21 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
     }
 
     public void OpenPointerAnimation() {
-        YoYo.with(Techniques.FlipInX)
-                .duration(500)
-                .playOn(findViewById(this.Pointer.getId()));
+        if(Pointer != null) {
+            ImageView pointer = (ImageView) findViewById(Pointer.getId());
+            YoYo.with(Techniques.FlipInX)
+                    .duration(500)
+                    .playOn(pointer);
+        }
     }
 
     private void closePointerAnimation() {
-        YoYo.with(Techniques.ZoomOut)
+        if(Pointer != null) {
+            ImageView pointer = (ImageView) findViewById(Pointer.getId());
+            YoYo.with(Techniques.ZoomOut)
                 .duration(200)
-                .playOn(findViewById(this.Pointer.getId()));
+                .playOn(pointer);
+        }
     }
 
     public void TKeyClick(View keyClick) {
