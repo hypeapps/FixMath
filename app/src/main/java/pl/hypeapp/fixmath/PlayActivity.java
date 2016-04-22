@@ -382,13 +382,13 @@ public class PlayActivity extends BaseGameActivity implements
         textView.setVisibility(View.VISIBLE);
 
         if(calculations.Result.length() >= 2){
-            textView.setTextSize(24);
+            textView.setTextSize(20);
         }
         if(calculations.Result.length() >= 4){
-            textView.setTextSize(18);
+            textView.setTextSize(15);
         }
         if(calculations.Result.length() >= 5){
-            textView.setTextSize(15);
+            textView.setTextSize(12);
         }
         textView.setText(calculations.Result);
 

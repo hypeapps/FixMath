@@ -35,7 +35,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingBottom="5dp"
                 android:tag="49"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -52,7 +53,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="50"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,7 +71,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="51"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -86,7 +89,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="52"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -113,7 +117,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="53"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -130,7 +135,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="54"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -147,7 +153,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="55"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,7 +171,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="56"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
         </LinearLayout>
 
@@ -190,7 +198,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="57"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -207,7 +216,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="58"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -224,7 +234,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="59"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -241,7 +252,8 @@
                 android:paddingBottom="5dp"
                 android:layout_marginLeft="6dp"
                 android:tag="60"
-                android:onClick="playLevel" />
+                android:onClick="playLevel"
+                android:enabled="false" />
         </LinearLayout>
 
         <LinearLayout

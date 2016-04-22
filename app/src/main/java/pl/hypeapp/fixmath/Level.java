@@ -2225,7 +2225,7 @@ public class Level {
         this.ResultTexts.add("3");
         this.CorrectFigures.add("rf");
 
-        //  2x3x11=55
+        //  2x3x11=66
 
         this.Variables.add(new String[]{"2" , "3", "11", "66"});
         this.Result.add("");
@@ -2234,7 +2234,7 @@ public class Level {
         this.ColumnStart.add(0);
         this.LineStart.add(4);
 
-        this.ResultTexts.add("55");
+        this.ResultTexts.add("66");
         this.CorrectFigures.add("q");
 
     }

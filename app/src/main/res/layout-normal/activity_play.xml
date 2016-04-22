@@ -930,12 +930,12 @@
         android:onClick="CalcClick"
         android:clickable="false"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="5dp"
         android:gravity="center_vertical|center_horizontal"
         android:layout_toRightOf="@+id/symbol3x3"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:textSize="30sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
