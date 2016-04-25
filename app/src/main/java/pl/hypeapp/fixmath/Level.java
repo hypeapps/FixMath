@@ -733,15 +733,15 @@ public class Level {
 
         //  8+8+8+8=32
 
-        this.Variables.add(new String[]{"8", "8", "8", "8"});
-        this.Result.add("32");
+        this.Variables.add(new String[]{"8", "1", "1", "1"});
+        this.Result.add("11");
         this.Symbols.add(new String[] {"+", "+","+" });
-        this.Figures.add(new String[] {"rf", "rf", "rf", "rf"});
+        this.Figures.add(new String[] {"rf", "ok", "ok", "ok"});
         this.ColumnStart.add(0);
         this.LineStart.add(2);
 
-        this.CorrectFigures.add("rf");
-        this.ResultTexts.add("8");
+        this.CorrectFigures.add("ok");
+        this.ResultTexts.add("1");
 
         //  8+4+4=16
 
@@ -759,15 +759,15 @@ public class Level {
         // 4+8+4=16
 
 
-        this.Variables.add(new String[]{"4", "8", "4", "16"});
+        this.Variables.add(new String[]{"4", "8", "4", "1", "17"});
         this.Result.add("");
-        this.Symbols.add(new String[] {"+", "+"});
-        this.Figures.add(new String[] {"s", "rf", "s", "q"});
+        this.Symbols.add(new String[] {"+", "+", "+"});
+        this.Figures.add(new String[] {"s", "rf", "s", "ok", "q"});
         this.ColumnStart.add(0);
         this.LineStart.add(4);
 
 
-        this.ResultTexts.add("16");
+        this.ResultTexts.add("17");
         this.CorrectFigures.add("q");
 
     }
@@ -844,29 +844,29 @@ public class Level {
 
         //  3+3+3-5=4
 
-        this.Variables.add(new String[]{"3", "3", "3","5"});
-        this.Result.add("4");
+        this.Variables.add(new String[]{"3", "3", "3","4"});
+        this.Result.add("5");
         this.Symbols.add(new String[] {"+", "+","-"});
-        this.Figures.add(new String[] {"kf", "kf", "kf", "oz"});
+        this.Figures.add(new String[] {"kf", "kf", "kf", "o"});
         this.ColumnStart.add(0);
         this.LineStart.add(3);
 
-        this.CorrectFigures.add("kf");
-        this.ResultTexts.add("3");
+        this.CorrectFigures.add("o");
+        this.ResultTexts.add("4");
 
 
-        // 5-3=2
+        // 5-3+4=6
 
 
-        this.Variables.add(new String[]{"5", "3", "2"});
+        this.Variables.add(new String[]{"5", "3", "4", "6"});
         this.Result.add("");
-        this.Symbols.add(new String[] {"-"});
-        this.Figures.add(new String[] {"oz", "kf", "q"});
+        this.Symbols.add(new String[] {"-", "+"});
+        this.Figures.add(new String[] {"oz", "kf", "o", "q"});
         this.ColumnStart.add(0);
         this.LineStart.add(4);
 
 
-        this.ResultTexts.add("2");
+        this.ResultTexts.add("6");
         this.CorrectFigures.add("q");
 
     }
@@ -1087,17 +1087,17 @@ public class Level {
         this.CorrectFigures.add("o");
         this.ResultTexts.add("5");
 
-        //  5/5+5=6
+        //  5/5+15=16
 
-        this.Variables.add(new String[]{"5", "5", "5"});
-        this.Result.add("6");
+        this.Variables.add(new String[]{"5", "5", "15"});
+        this.Result.add("16");
         this.Symbols.add(new String[] {divideCh, "+" });
-        this.Figures.add(new String[] {"o", "o", "o"});
+        this.Figures.add(new String[] {"o", "o", "k"});
         this.ColumnStart.add(0);
         this.LineStart.add(2);
 
-        this.CorrectFigures.add("o");
-        this.ResultTexts.add("5");
+        this.CorrectFigures.add("k");
+        this.ResultTexts.add("15");
 
         //  5x4+4=24
 
@@ -1112,18 +1112,18 @@ public class Level {
         this.ResultTexts.add("4");
 
 
-        // 5x4/4=5
+        // 5x4/4+15=20
 
 
-        this.Variables.add(new String[]{"5", "4", "4","5"});
+        this.Variables.add(new String[]{"5", "4", "4","15","20"});
         this.Result.add("");
-        this.Symbols.add(new String[] {multiplerCh,divideCh});
-        this.Figures.add(new String[] {"o", "s", "s", "q"});
+        this.Symbols.add(new String[] {multiplerCh,divideCh, "+"});
+        this.Figures.add(new String[] {"o", "s", "s","k", "q"});
         this.ColumnStart.add(0);
         this.LineStart.add(4);
 
 
-        this.ResultTexts.add("5");
+        this.ResultTexts.add("20");
         this.CorrectFigures.add("q");
 
     }
@@ -1319,17 +1319,17 @@ public class Level {
         this.CorrectFigures.add("rg");
         this.ResultTexts.add("2");
 
-        /// 2x2x2x2=16
+        /// 2x2x4x4=64
 
-        this.Variables.add(new String[]{"2", "2", "2", "2"});
-        this.Result.add("16");
+        this.Variables.add(new String[]{"2", "2", "4", "4"});
+        this.Result.add("64");
         this.Symbols.add(new String[] {multiplerCh,multiplerCh, multiplerCh});
-        this.Figures.add(new String[] {"rg", "rg", "rg", "rg"});
+        this.Figures.add(new String[] {"rg", "rg", "s", "s"});
         this.ColumnStart.add(0);
         this.LineStart.add(2);
 
-        this.CorrectFigures.add("rg");
-        this.ResultTexts.add("2");
+        this.CorrectFigures.add("s");
+        this.ResultTexts.add("4");
 
         //  2x7+7=21
 
@@ -1344,18 +1344,18 @@ public class Level {
         this.ResultTexts.add("7");
 
 
-        // 7*2/2=7
+        // 7*2/2*4=28
 
 
-        this.Variables.add(new String[]{"7", "2", "2","7"});
+        this.Variables.add(new String[]{"7", "2", "2", "4", "28"});
         this.Result.add("");
-        this.Symbols.add(new String[] {multiplerCh,divideCh});
-        this.Figures.add(new String[] {"oz", "rg", "rg", "q"});
+        this.Symbols.add(new String[] {multiplerCh,divideCh, multiplerCh});
+        this.Figures.add(new String[] {"oz", "rg", "rg", "s", "q"});
         this.ColumnStart.add(0);
         this.LineStart.add(4);
 
 
-        this.ResultTexts.add("7");
+        this.ResultTexts.add("28");
         this.CorrectFigures.add("q");
 
     }
@@ -1734,28 +1734,28 @@ public class Level {
         this.ResultTexts.add("11");
 
 
-        // 11+11+11=33
+        // 12+12+12=36
 
-        this.Variables.add(new String[]{"11", "11", "11"});
-        this.Result.add("33");
+        this.Variables.add(new String[]{"12", "12", "12"});
+        this.Result.add("36");
         this.Symbols.add(new String[] { "+", "+"});
-        this.Figures.add(new String[] {"kf", "kf", "kf"});
+        this.Figures.add(new String[] {"rf", "rf", "rf"});
         this.ColumnStart.add(0);
         this.LineStart.add(3);
 
-        this.CorrectFigures.add("kf");
-        this.ResultTexts.add("11");
+        this.CorrectFigures.add("rf");
+        this.ResultTexts.add("12");
 
-        //  11+11x11=132
+        //  11+11x12=143
 
-        this.Variables.add(new String[]{"11" , "11", "11", "132"});
+        this.Variables.add(new String[]{"11" , "11", "12", "143"});
         this.Result.add("");
         this.Symbols.add(new String[] {"+",multiplerCh});
-        this.Figures.add(new String[] {"kf", "kf","kf", "q"});
+        this.Figures.add(new String[] {"kf", "kf","rf", "q"});
         this.ColumnStart.add(0);
         this.LineStart.add(4);
 
-        this.ResultTexts.add("132");
+        this.ResultTexts.add("143");
         this.CorrectFigures.add("q");
 
     }
@@ -2029,28 +2029,28 @@ public class Level {
         this.CorrectFigures.add("kf");
         this.ResultTexts.add("10");
 
-        //  10x10=100
+        //  11x11=100
 
-        this.Variables.add(new String[]{"10", "10"});
-        this.Result.add("100");
+        this.Variables.add(new String[]{"11", "11"});
+        this.Result.add("121");
         this.Symbols.add(new String[] {multiplerCh});
-        this.Figures.add(new String[] {"kf", "kf"});
+        this.Figures.add(new String[] {"rg", "rg"});
         this.ColumnStart.add(0);
         this.LineStart.add(3);
 
-        this.ResultTexts.add("10");
-        this.CorrectFigures.add("kf");
+        this.ResultTexts.add("11");
+        this.CorrectFigures.add("rg");
 
         //  10x9+10=100
 
-        this.Variables.add(new String[]{"10" , "9", "10", "100"});
+        this.Variables.add(new String[]{"10" , "9", "11", "101"});
         this.Result.add("");
         this.Symbols.add(new String[] {multiplerCh, "+"});
-        this.Figures.add(new String[] {"kf", "s", "kf", "q"});
+        this.Figures.add(new String[] {"kf", "s", "rg", "q"});
         this.ColumnStart.add(0);
         this.LineStart.add(4);
 
-        this.ResultTexts.add("100");
+        this.ResultTexts.add("101");
         this.CorrectFigures.add("q");
 
     }
@@ -2793,17 +2793,17 @@ public class Level {
         this.CorrectFigures.add("k");
         this.ResultTexts.add("2");
 
-        //  2x2x4x4=64
+        //  3x2x4x4=64
 
-        this.Variables.add(new String[]{"2" , "2", "4" , "4"});
-        this.Result.add("64");
+        this.Variables.add(new String[]{"3" , "2", "4" , "4"});
+        this.Result.add("96");
         this.Symbols.add(new String[] {multiplerCh,multiplerCh,multiplerCh});
-        this.Figures.add(new String[] {"k", "k", "ok", "ok"});
+        this.Figures.add(new String[] {"o", "k", "ok", "ok"});
         this.ColumnStart.add(0);
         this.LineStart.add(3);
 
-        this.ResultTexts.add("2");
-        this.CorrectFigures.add("k");
+        this.ResultTexts.add("3");
+        this.CorrectFigures.add("o");
 
         //  8x8x8=512
 
@@ -2815,18 +2815,18 @@ public class Level {
         this.LineStart.add(4);
 
         this.ResultTexts.add("8");
-        this.CorrectFigures.add("ok");
+        this.CorrectFigures.add("rg");
 
-        //  8/4/2=1
+        //  8*3/4/2=1
 
-        this.Variables.add(new String[]{"8" , "4", "2", "1"});
+        this.Variables.add(new String[]{"8" ,"3", "4", "2", "3"});
         this.Result.add("");
-        this.Symbols.add(new String[] {divideCh, divideCh });
-        this.Figures.add(new String[] {"rg", "ok", "k", "q"});
+        this.Symbols.add(new String[] {multiplerCh,divideCh, divideCh });
+        this.Figures.add(new String[] {"rg", "o", "ok", "k", "q"});
         this.ColumnStart.add(0);
         this.LineStart.add(5);
 
-        this.ResultTexts.add("1");
+        this.ResultTexts.add("3");
         this.CorrectFigures.add("q");
 
     }

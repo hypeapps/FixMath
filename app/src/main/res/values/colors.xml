@@ -20,6 +20,15 @@
     <color name="kwadrat_f_kolor">#8d55ed</color>
     <color name="kwadrat_blue_kolor">#475bc5</color>
 
-
+    <color name="romb_txt_color">#297361</color>
+    <color name="rombf_txt_kolor">#47255b</color>
+    <color name="okat_txt_kolor">#8e3d30</color>
+    <color name="kwadrat_txt_kolor">#812d35</color>
+    <color name="skat_txt_kolor">#8d7028</color>
+    <color name="question_txt_kolor">#126812</color>
+    <color name="kwadrat_blue_txt_kolor">#394aa6</color>
+    <color name="romb_green_txt_kolor">#527a2f</color>
+    <color name="okrag_txt_kolor">#357e99</color>
+    <color name="kwadrat_f_kolor_txt">#5c3a96</color>
 
 </resources>

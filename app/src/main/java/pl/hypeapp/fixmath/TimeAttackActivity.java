@@ -100,7 +100,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         sfxManager = new SFXManager(this, sharedPref.getBoolean("ISMUTE", false));
 
 
-        keyboard = new TimeKeyboard();
+        keyboard = new TimeKeyboard(this, sfxManager);
         setResetKeyboard();
 
 
@@ -479,6 +479,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
             int ID = getResources().getIdentifier(TextViewId, "id", getPackageName());
             calcElement = (TextView) findViewById(ID);
             calcElement.setVisibility(View.GONE);
+            calcElement.setTag("");
             calcElement.setText("");
 
             String ImageViewId = "t_var_ImageView_" + i;
@@ -499,7 +500,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
         }
 
 
-        keyboard = new TimeKeyboard();
+        keyboard = new TimeKeyboard(this, sfxManager);
     }
 
     private void resetCorrectFigures() {
@@ -1527,19 +1528,22 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
                         }
 
 
-                        textView.setText("" + keyboard.GetString(i, TextViewIndex));
+//                        textView.setText("" + keyboard.GetString(i, TextViewIndex));
+
                         if (keyboard.helperInt > 2) {
                             ErrorKeyAnimation();
                             sfxManager.KeyboardErrorPlay();
                         } else {
-                            WriteBlankAnimation(textView);
+                            keyboard.PrintNumbersInFigures(i, textView);
+                            sfxManager.KeyboardClickPlay(true);
+//                            WriteBlankAnimation(textView);
                         }
 
-                        if (keyboard.helperInt < 2) {
-                            textView.setTextSize(30);
-                        } else if (keyboard.helperInt == 2) {
-                            textView.setTextSize(19);
-                        }
+//                        if (keyboard.helperInt < 2) {
+//                            textView.setTextSize(30);
+//                        } else if (keyboard.helperInt == 2) {
+//                            textView.setTextSize(19);
+//                        }
 
 
 
@@ -1548,14 +1552,16 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
                         if (!txt.equals("")) {
                             BackspaceBlankAnimation(textView);
                         }
-                        textView.setText("" + keyboard.GetString(i, TextViewIndex));
+//                        textView.setText("" + keyboard.GetString(i, TextViewIndex));
+                        keyboard.BackSpaceNumbersInFigures(textView);
+                        sfxManager.KeyboardBackspacePlay();
 
 
-                        if (keyboard.helperInt == 2) {
-                            textView.setTextSize(30);
-                        } else if (keyboard.helperInt > 2) {
-                            textView.setTextSize(30);
-                        }
+//                        if (keyboard.helperInt == 2) {
+//                            textView.setTextSize(30);
+//                        } else if (keyboard.helperInt > 2) {
+//                            textView.setTextSize(30);
+//                        }
                     }
 
                 }

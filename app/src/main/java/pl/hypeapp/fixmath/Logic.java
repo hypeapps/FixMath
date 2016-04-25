@@ -74,7 +74,7 @@ public class Logic {
         }
     }
 
-    public boolean checkFirstLine(Keyboard keyboard){
+    public boolean checkFirstLine(Keyboard2 keyboard){
 
         for (int i = 0; i < FirstLineAnswer.length; i++){
             if (FirstLineAnswer[i].equals(keyboard.clickTab[1][i])){
@@ -91,7 +91,7 @@ public class Logic {
         return false;
     }
 
-    public boolean checkSecondLine(Keyboard keyboard){
+    public boolean checkSecondLine(Keyboard2 keyboard){
 
         for (int i = 0; i < SecondLineAnswer.length; i++){
             if (SecondLineAnswer[i].equals(keyboard.clickTab[2][i])){
@@ -109,7 +109,7 @@ public class Logic {
         return false;
     }
 
-    public boolean checkThirdLine(Keyboard keyboard){
+    public boolean checkThirdLine(Keyboard2 keyboard){
         for (int i = 0; i < ThirdLineAnswer.length ; i++){
             if (ThirdLineAnswer[i].equals(keyboard.clickTab[3][i])){
                 helper++;
@@ -127,7 +127,7 @@ public class Logic {
         return false;
     }
 
-    public boolean checkFourLine(Keyboard keyboard){
+    public boolean checkFourLine(Keyboard2 keyboard){
 
         for (int i = 0; i < FourLineAnswer.length; i++){
             if (FourLineAnswer[i].equals(keyboard.clickTab[4][i])){
@@ -145,7 +145,7 @@ public class Logic {
         return false;
     }
 
-    public boolean checkFiveLine(Keyboard keyboard){
+    public boolean checkFiveLine(Keyboard2 keyboard){
 
         for (int i = 0; i < FiveLineAnswer.length; i++){
             if (FiveLineAnswer[i].equals(keyboard.clickTab[5][i])){

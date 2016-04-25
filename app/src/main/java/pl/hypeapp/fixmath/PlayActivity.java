@@ -1,8 +1,12 @@
 package pl.hypeapp.fixmath;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -38,7 +42,8 @@ public class PlayActivity extends BaseGameActivity implements
     public boolean clicked;
     private boolean isKeyboradOpen = false;
     public ArrayList<TextView> TextViews;
-    public Keyboard keyboard;
+    Keyboard2 keyboard2;
+
     public Logic logic;
     ArrayList<Integer> clickAbleLine = new ArrayList<>();
     int howManyLines = 0, howManyLinesCorrectLines = 0;
@@ -99,11 +104,17 @@ public class PlayActivity extends BaseGameActivity implements
             SetClickAbleBlanks(calculations, level.GetFigures(i));
         }
 
-        keyboard = new Keyboard();
+        SharedPreferences sharedPref = getSharedPreferences("SOUNDS", MODE_PRIVATE);
+        sfxManager = new SFXManager(this, sharedPref.getBoolean("ISMUTE", false));
+
+
 
         LinesSet();
         SetResetKeyboard();
         SetUpDown(level.GetUpLine(), level.GetDownLine());
+
+        keyboard2 = new Keyboard2(this, level.GetUpLine(), level.GetDownLine(), sfxManager);
+
 
         logic = new Logic();
         for(int i = 0, x = level.GetUpLine(); i < level.HowManyLines; i++, x++) {
@@ -111,8 +122,7 @@ public class PlayActivity extends BaseGameActivity implements
         }
         setCorrectFrameFigures();
 
-        SharedPreferences sharedPref = getSharedPreferences("SOUNDS", MODE_PRIVATE);
-        sfxManager = new SFXManager(this, sharedPref.getBoolean("ISMUTE", false));
+
 
         myProgress = MyProgress.getInstance();
 
@@ -307,26 +317,37 @@ public class PlayActivity extends BaseGameActivity implements
         correctFigure.setVisibility(View.INVISIBLE);
         if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("k")) {
             correctFigure.setBackgroundResource(R.drawable.kwadrat);
+            blockGoodAnswerFigures("k");
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("o")) {
             correctFigure.setBackgroundResource(R.drawable.okrag);
+            blockGoodAnswerFigures("o");
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("r")) {
             correctFigure.setBackgroundResource(R.drawable.romb);
+            blockGoodAnswerFigures("r");
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("s")) {
             correctFigure.setBackgroundResource(R.drawable.skat);
+            blockGoodAnswerFigures("s");
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("rf")) {
             correctFigure.setBackgroundResource(R.drawable.romb_f);
+            blockGoodAnswerFigures("rf");
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("oz")) {
             correctFigure.setBackgroundResource(R.drawable.okrag_z);
+            blockGoodAnswerFigures("oz");
         } else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("ok")) {
             correctFigure.setBackgroundResource(R.drawable.okat);
+            blockGoodAnswerFigures("ok");
         }else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("q")) {
             correctFigure.setBackgroundResource(R.drawable.question);
+            blockGoodAnswerFigures("q");
         }else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("kf")) {
             correctFigure.setBackgroundResource(R.drawable.kwadrat_f);
+            blockGoodAnswerFigures("kf");
         }else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("kb")) {
             correctFigure.setBackgroundResource(R.drawable.kwadrat_blue);
+            blockGoodAnswerFigures("kb");
         }else if (level.GetTimeAttackCorrectFigures(passedLinesIndexer - 1).equals("rg")) {
             correctFigure.setBackgroundResource(R.drawable.romb_green);
+            blockGoodAnswerFigures("rg");
         }
 
         YoYo.with(Techniques.ZoomIn)
@@ -355,6 +376,87 @@ public class PlayActivity extends BaseGameActivity implements
                 .playOn(correctFigure);
 
 
+    }
+
+    void animClickFigures(String figureType){
+
+        for (int i = Up; i <= Down; i++) {
+            for (int x = 0; x <= 4; x++) {
+                String TextViewId = "var" + i + "x" + x;
+                int id = getResources().getIdentifier(TextViewId, "id", getPackageName());
+                TextView allTextContainer = (TextView) findViewById(id);
+                if(allTextContainer.getTag() != null) {
+                    String containerTags = allTextContainer.getTag().toString();
+
+                    if (containerTags.equals(figureType)) {
+                        YoYo.with(Techniques.RubberBand)
+                                .duration(500)
+                                .playOn(allTextContainer);
+                    }
+                }
+
+            }
+        }
+    }
+
+    void blockGoodAnswerFigures(String figureType){
+
+            for (int i = Up; i <= Down; i++) {
+                for (int x = 0; x <= 4; x++) {
+                    String TextViewId = "var" + i + "x" + x;
+                    int id = getResources().getIdentifier(TextViewId, "id", getPackageName());
+                    TextView allTextContainer = (TextView) findViewById(id);
+                    if(allTextContainer.getTag() != null) {
+                        String containerTags = allTextContainer.getTag().toString();
+
+                        if (containerTags.equals(figureType)) {
+                            SetFiguresColor(allTextContainer, figureType);
+                            allTextContainer.setEnabled(false);
+                        }
+                    }
+
+                }
+            }
+
+    }
+
+    public void SetFiguresColor(TextView textView, String figureType){
+
+            switch(figureType){
+                case "k":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.kwadrat_txt_kolor));
+                    break;
+                case "rf":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.rombf_txt_kolor));
+                    break;
+                case "oz":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.skat_txt_kolor));
+                    break;
+                case "ok":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.okat_txt_kolor));
+                    break;
+                case "o":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.okrag_txt_kolor));
+                    break;
+                case "kb":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.kwadrat_blue_txt_kolor));
+                    break;
+                case "s":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.skat_txt_kolor));
+                    break;
+                case "rg":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.romb_green_txt_kolor));
+                    break;
+                case "kf":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.kwadrat_f_kolor_txt));
+                    break;
+                case "r":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.romb_txt_color));
+                    break;
+                case "q":
+                    textView.setTextColor(ContextCompat.getColor(this, R.color.question_txt_kolor));
+                    break;
+            }
     }
 
     public void FillCalculationInLine(Calculations calculations){
@@ -466,32 +568,23 @@ public class PlayActivity extends BaseGameActivity implements
                             }
                         }
 
-                        textView.setText("" + keyboard.GetString(i, TextViewX, TextViewY));
-                        if(keyboard.helperInt > 2){
+
+                        if(keyboard2.helperInt > 2){
                             ErrorKeyAnim();
                         }else{
+                            keyboard2.PrintNumbersInFigures( i, textView);
                             WriteBlankAnim(textView);
                         }
 
-                        if(keyboard.helperInt < 2){
-                            textView.setTextSize(30);
-                        }else if (keyboard.helperInt == 2){
-                            textView.setTextSize(19);
-                        }
 
                     }else if (i == 10) {
 
                         if(!txt.equals("")){
                             BackspaceBlankAnim(textView);
                         }
-                        textView.setText("" + keyboard.GetString(i, TextViewX, TextViewY));
+                        keyboard2.BackspaceNumbersInFigures(textView);
 
 
-                        if(keyboard.helperInt == 2){
-                            textView.setTextSize(30);
-                        }else if (keyboard.helperInt > 2){
-                            textView.setTextSize(30);
-                        }
                     }
                     else{
 
@@ -508,7 +601,7 @@ public class PlayActivity extends BaseGameActivity implements
             int parentTextView = ((View)textView.getParent()).getId();
 
             if (calcID[0] == parentTextView){
-                if(logic.checkFirstLine(keyboard)){
+                if(logic.checkFirstLine(keyboard2)){
                     sfxManager.CorrectLinePlay();
                     this.howManyLinesCorrectLines++;
                     View v = findViewById(parentTextView);
@@ -526,7 +619,7 @@ public class PlayActivity extends BaseGameActivity implements
                 }
             }
             else if (calcID[1] == parentTextView){
-                if(logic.checkSecondLine(keyboard)){
+                if(logic.checkSecondLine(keyboard2)){
                     sfxManager.CorrectLinePlay();
                     this.howManyLinesCorrectLines++;
                     View v = findViewById(parentTextView);
@@ -550,7 +643,7 @@ public class PlayActivity extends BaseGameActivity implements
                 }
             }
             else if (calcID[2] == parentTextView){
-               if(logic.checkThirdLine(keyboard)){
+               if(logic.checkThirdLine(keyboard2)){
                    sfxManager.CorrectLinePlay();
                    this.howManyLinesCorrectLines++;
                    View v = findViewById(parentTextView);
@@ -572,7 +665,7 @@ public class PlayActivity extends BaseGameActivity implements
                }
             }
             else if (calcID[3] == parentTextView){
-                if (logic.checkFourLine(keyboard)){
+                if (logic.checkFourLine(keyboard2)){
                     sfxManager.CorrectLinePlay();
                     this.howManyLinesCorrectLines++;
                     View v = findViewById(parentTextView);
@@ -594,7 +687,7 @@ public class PlayActivity extends BaseGameActivity implements
                 }
             }
             else if (calcID[4] == parentTextView){
-                if (logic.checkFiveLine(keyboard)){
+                if (logic.checkFiveLine(keyboard2)){
                     sfxManager.CorrectLinePlay();
                     this.howManyLinesCorrectLines++;
                     View v = findViewById(parentTextView);
@@ -841,27 +934,38 @@ public class PlayActivity extends BaseGameActivity implements
             textView.setVisibility(View.VISIBLE);
             if (figures[i].equals("k")){
                 textView.setBackgroundResource(R.drawable.kwadrat);
+                textView.setTag("k");
             }else if(figures[i].equals("o")){
                 textView.setBackgroundResource(R.drawable.okrag);
+                textView.setTag("o");
             }else if(figures[i].equals("r")){
                 textView.setBackgroundResource(R.drawable.romb);
+                textView.setTag("r");
             }else if(figures[i].equals("s")){
                 textView.setBackgroundResource(R.drawable.skat);
+                textView.setTag("s");
             }else  if(figures[i].equals("rf")){
                 textView.setBackgroundResource(R.drawable.romb_f);
+                textView.setTag("rf");
             }else  if(figures[i].equals("oz")){
                 textView.setBackgroundResource(R.drawable.okrag_z);
+                textView.setTag("oz");
             }else  if(figures[i].equals("ok")){
                 textView.setBackgroundResource(R.drawable.okat);
+                textView.setTag("ok");
             }else if(figures[i].equals("q")){
                 textView.setBackgroundResource(R.drawable.question);
                 textView.setText("?");
+                textView.setTag("q");
             }else  if(figures[i].equals("kf")){
                 textView.setBackgroundResource(R.drawable.kwadrat_f);
+                textView.setTag("kf");
             }else  if(figures[i].equals("kb")){
                 textView.setBackgroundResource(R.drawable.kwadrat_blue);
+                textView.setTag("kb");
             }else  if(figures[i].equals("rg")){
                 textView.setBackgroundResource(R.drawable.romb_green);
+                textView.setTag("rg");
             }
 
         }
@@ -912,9 +1016,9 @@ public class PlayActivity extends BaseGameActivity implements
         CloseKeyboardNextTo();
 
         //FIGURE ANIMATION
-        YoYo.with(Techniques.RubberBand)
-                .duration(500)
-                .playOn(findViewById(ClickOn));
+
+
+        animClickFigures(view.getTag().toString());
 
 
 
