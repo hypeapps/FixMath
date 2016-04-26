@@ -569,7 +569,7 @@ public class PlayActivity extends BaseGameActivity implements
                         }
 
 
-                        if(keyboard2.helperInt > 2){
+                        if(textView.getText().length() > 2){
                             ErrorKeyAnim();
                         }else{
                             keyboard2.PrintNumbersInFigures( i, textView);

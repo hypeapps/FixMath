@@ -1530,7 +1530,7 @@ public class TimeAttackActivity extends BaseGameActivity implements GoogleApiCli
 
 //                        textView.setText("" + keyboard.GetString(i, TextViewIndex));
 
-                        if (keyboard.helperInt > 2) {
+                        if (textView.getText().length() > 2) {
                             ErrorKeyAnimation();
                             sfxManager.KeyboardErrorPlay();
                         } else {

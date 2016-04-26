@@ -8,8 +8,8 @@ android {
         applicationId "pl.hypeapp.fixmath"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 4
-        versionName "1.2a"
+        versionCode 5
+        versionName "1.3"
     }
     buildTypes {
         release {
