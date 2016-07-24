@@ -38,3 +38,7 @@ You can download FixMath at [Google Play](https://play.google.com/store/apps/det
 ![FixMath](https://lh3.googleusercontent.com/zC1fm-_DRNeZ0ymGVyoMYmD2aweOotpd1MZZe_eSQbDOWIuRaLYL7O4Ql4Kx9VYXURA=h310)
 ![FixMath](https://lh3.googleusercontent.com/ttzbGo8VTYRlVlQ_1ASM3PHLOyZ7NdgS9W0MwFlsHEPJN63_1L0CdsiUxaXMX0o79ZA=h310)
 ![FixMath](https://lh3.googleusercontent.com/g-D7w1EKBdZbNZE6Bun92_QmykwCHcC25PWQTswhh36-ziTxjbutG3jOVydlKWJW1Gxi=h310)
+
+## Contact 
+
+E-mail: pszem.szym@gmail.com Twitter: @hype_app
