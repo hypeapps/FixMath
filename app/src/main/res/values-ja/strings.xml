@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="tut_1">目標は計算式を直すことと</string>
+    <string name="tut_2">クエスチョンマークの図を正しくすることです</string>
+    <string name="tut_3">覚えておいてください! それぞれの種類の図は、いつも同じ数になります</string>
+    <string name="settings">設定</string>
+    <string name="achievements">達成</string>
+    <string name="settings_top">設定</string>
+    <string name="sounds">サウンド</string>
+    <string name="reset_game">ゲームをリセット</string>
+    <string name="choose_challenge">課題の選択:</string>
+    <string name="reset">進行状況がリセットされました。</string>
+    <string name="share">FixMath https://play.google.com/store/apps/details?id=pl.hypeapp.fixmath を確認してください</string>
+
+</resources>
