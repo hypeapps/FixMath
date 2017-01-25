@@ -42,3 +42,9 @@ You can download FixMath at [Google Play](https://play.google.com/store/apps/det
 ## Contact 
 
 E-mail: pszem.szym@gmail.com Twitter: @hype_app
+
+## License 
+
+>Apache License
+>Version 2.0, January 2004
+>http://www.apache.org/licenses/
