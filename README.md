@@ -41,7 +41,7 @@ You can download FixMath at [Google Play](https://play.google.com/store/apps/det
 
 ## Contact 
 
-E-mail: pszem.szym@gmail.com Twitter: @hype_app
+E-mail: pszem.szym@gmail.com Twitter: [@hype_app](https://twitter.com/hype_app)
 
 ## License 
 
